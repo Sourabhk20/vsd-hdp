@@ -9,7 +9,7 @@
 
 **Installation**
 
-*Steps followed to install Yosys
+*Steps followed to install Yosys*
 
 
     $ git clone https://github.com/YosysHQ/yosys.git
