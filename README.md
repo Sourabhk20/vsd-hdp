@@ -2,8 +2,10 @@
 
 # Day 0 
 ## Tool 1: Yosys
-*Installation flow
+### Installation
 
+*Installation flow
+'''
 $ git clone https://github.com/YosysHQ/yosys.git
 $ cd yosys
 $ sudo apt install make (If make is not installed please install it) 
@@ -14,4 +16,5 @@ $ sudo apt-get install build-essential clang bison flex \
 $ make config-gcc
 $ make 
 $ sudo make install
+'''
 
