@@ -8,7 +8,7 @@
 
 Installation flow 
 
-<script>
+'''
     $ git clone https://github.com/YosysHQ/yosys.git
     $ cd yosys
     $ sudo apt install make (If make is not installed please install it) 
@@ -19,7 +19,7 @@ Installation flow
     $ make config-gcc
     $ make 
     $ sudo make install
-</script>
+
 
 
 
