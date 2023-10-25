@@ -9,9 +9,7 @@
 
 **Installation**
 
-*Installation flow 
-
-Installation flow 
+*Steps followed to install Yosys
 
 
     $ git clone https://github.com/YosysHQ/yosys.git
@@ -24,6 +22,11 @@ Installation flow
     $ make config-gcc
     $ make 
     $ sudo make install
+
+
+Progrees Image of Yosys:
+
+![Alt Text](
 
 
 
