@@ -2,7 +2,7 @@
 
 # Day 0 
 ## Tool 1: Yosys
-** Installation **
+**Installation**
 
 *Installation flow
 ** $ git clone https://github.com/YosysHQ/yosys.git
