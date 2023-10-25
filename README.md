@@ -35,7 +35,7 @@ Progrees Image of Yosys:
 
 Progrees Image of iverilog:
 
-    ![iverilog](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/2c19ad5e-283b-4ea3-80ca-88750321d6d4)
+![iverilog](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/2c19ad5e-283b-4ea3-80ca-88750321d6d4)
 
 
 
@@ -47,7 +47,7 @@ Progrees Image of iverilog:
 
 Progrees Image of iverilog:
 
-    ![gtkave](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/1aafbcd3-3970-4169-9c91-dd34c493ce0f)
+![gtkave](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/1aafbcd3-3970-4169-9c91-dd34c493ce0f)
 
 
 
