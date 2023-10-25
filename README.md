@@ -13,7 +13,6 @@
 
 Installation flow 
 
-'''
 
     $ git clone https://github.com/YosysHQ/yosys.git
     $ cd yosys
