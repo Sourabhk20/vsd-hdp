@@ -1,6 +1,7 @@
 # vsd-hdp
 
 # Day 0 
+> Objectives
 ## Tool 1: Yosys
 **Installation**
 
