@@ -91,7 +91,7 @@ Progrees Image of iverilog:
 		reg i0,i1,sel;
 		// Outputs
 		wire y;
-        		// Instantiate the Unit Under Test (UUT)
+   		// Instantiate the Unit Under Test (UUT)
 			good_mux uut (
 				.sel(sel),
 				.i0(i0),
