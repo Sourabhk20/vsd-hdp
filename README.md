@@ -1,7 +1,7 @@
 # vsd-hdp
 
-https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-0
-https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-1
+[https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-0]
+[https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-1]
 
 
 ## Day 0 
