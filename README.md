@@ -84,7 +84,7 @@ Progrees Image of iverilog:
     Testbench:
 
         `timescale 1ns / 1ps
-module tb_good_mux;
+	module tb_good_mux;
 	// Inputs
 	reg i0,i1,sel;
 	// Outputs
