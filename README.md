@@ -50,6 +50,32 @@ Progrees Image of iverilog:
 ![gtkave](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/1aafbcd3-3970-4169-9c91-dd34c493ce0f)
 
 
+## Day 1
+
+### Mux 2:1 (Behaviroal Level modeling)
+
+**Learning how to use iverilog, gtkwave and yosys for RTL Design, simulation and Synthesis**
+
+*Below steps are followed while simulating the design:*
+1. iverilog:
+       Verilog code for mux is written using below commands
+
+           $ iverilog design_verilog.v tb_design_verilog.v
+           $ ./a.out
+   Dumpfile is generated using gtkwave
+           $ gkwave design.vcd 
+
+        RTL Code:
+           $ module good_mux (input i0, input i1, input sel, output reg y):
+           $ always @(*)
+           $ begin
+               $ if(sel)
+                   $ y <= i1;
+               $ else
+                   $ y <= i0;
+               $ end
+           $ endmodule
+
 
 
 
