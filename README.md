@@ -139,13 +139,13 @@ Progrees Image of iverilog:
 	                write_verilog <netlist_file_name>.v (generates a netlist)
 
 
-	Synthesis output showing number of input, output signals that are used in the design:
+	Synthesis output for 2:1 Mux showing number of input, output signals that are used in the design:
 
 
 	![yosys_no of cells](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/88336a1b-90e5-4b66-a1aa-ee541be87bac)
 
 
-  	Generated logic after synthesis (Gate level):
+  	Generated logic for 2:1 Mux after synthesis:
    		
 
 	![yosys_lab1_show](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/51072939-3b8b-4e33-9f86-baaea1780407)
