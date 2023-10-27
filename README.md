@@ -3,7 +3,7 @@
 Author: Sourabh Kulkarni
 
 i. [Day 0](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-0)   
-ii.[Day 1](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-1)
+ii. [Day 1](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-1)
 
 
 ## Day 0 
