@@ -127,15 +127,31 @@ Progrees Image of iverilog:
           Commands used to run the synthesis:
                   Skywater PDK 130 nm library is used for the synthesis.
 
-                yosys
-                read_liberty -lib <lib_path>/ lib file 
-                read_verilog <verilog_file.v>
-                synth -top <verilog_file>  (Include top level RTL design name here)
-                abc -liberty <lib_path>/ lib file (matches the design to the gates which specified in the lib file)
-                show 
-                write_verilog <netlist_file_name>.v (generates a netlist)
+	                yosys
+	                read_liberty -lib <lib_path>/ lib file 
+	                read_verilog <verilog_file.v>
+	                synth -top <verilog_file>  (Include top level RTL design name here)
+	                abc -liberty <lib_path>/ lib file (matches the design to the gates which specified in the lib file)
+	                show 
+	                write_verilog <netlist_file_name>.v (generates a netlist)
 
 
+	Synthesis output showing number of input, output cells that are used in the design:
+
+
+
+
+  	Generated logic after synthesis (Gate level):
+   		
+
+![yosys_lab1_show](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/51072939-3b8b-4e33-9f86-baaea1780407)
+
+
+
+	
+  		
+
+  		
           
 
 
