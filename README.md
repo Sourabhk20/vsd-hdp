@@ -139,6 +139,7 @@ Progrees Image of iverilog:
 	Synthesis output showing number of input, output cells that are used in the design:
 
 
+![yosys_no of cells](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/88336a1b-90e5-4b66-a1aa-ee541be87bac)
 
 
   	Generated logic after synthesis (Gate level):
