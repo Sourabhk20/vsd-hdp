@@ -65,9 +65,9 @@ Progrees Image of iverilog:
    Dumpfile is generated using gtkwave
            $ gkwave design.vcd 
 
-        RTL Code:
-   
-           module good_mux (input i0, input i1, input sel, output reg y):
+    RTL Design:
+     
+       module good_mux (input i0, input i1, input sel, output reg y):
            always @(*)
            begin
                if(sel)
@@ -77,6 +77,7 @@ Progrees Image of iverilog:
                end
            endmodule
 
+           
 
 
 
