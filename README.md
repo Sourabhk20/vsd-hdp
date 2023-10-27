@@ -1,8 +1,8 @@
 # vsd-hdp
 
-# Day 0 
+## Day 0 
 
-## Tool 1: Yosys
+### Tool 1: Yosys
 **Objectives**
     - Install Ubuntu 20.04 and install yosys, iverilog and gtkwave.
     - Check and verify yosys is succesfully installed.
