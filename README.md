@@ -83,13 +83,14 @@ Progrees Image of iverilog:
 
     Testbench:
 
-   	`timescale 1ns / 1ps
-	module tb_good_mux;
+
+   	
+		`timescale 1ns / 1ps
+		module tb_good_mux;
 		// Inputs
 		reg i0,i1,sel;
 		// Outputs
 		wire y;
-
         	// Instantiate the Unit Under Test (UUT)
 		good_mux uut (
 			.sel(sel),
