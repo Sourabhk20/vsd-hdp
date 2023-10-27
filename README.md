@@ -117,6 +117,7 @@ Progrees Image of iverilog:
 
 
    2. gtkwave simulation waveform:
+  
 
    	 <img width="634" alt="gtkave_waveform" src="https://github.com/Sourabhk20/vsd-hdp/assets/148907305/2a84e1f6-d11b-46e4-ae6f-f8e811f90641">
 
@@ -136,7 +137,7 @@ Progrees Image of iverilog:
 	                write_verilog <netlist_file_name>.v (generates a netlist)
 
 
-	Synthesis output showing number of input, output cells that are used in the design:
+	Synthesis output showing number of input, output signals that are used in the design:
 
 
 	![yosys_no of cells](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/88336a1b-90e5-4b66-a1aa-ee541be87bac)
