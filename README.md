@@ -149,7 +149,7 @@ Progrees Image of iverilog:
   	Generated logic for 2:1 Mux after synthesis:
    		
 
-	![yosys_lab1_show](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/51072939-3b8b-4e33-9f86-baaea1780407)
+![yosys_lab1_show](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/51072939-3b8b-4e33-9f86-baaea1780407)
 
 
   Netlist generated after synthesis:
