@@ -63,6 +63,7 @@ Progrees Image of iverilog:
 **Learning how to use iverilog, gtkwave and yosys for RTL Design, simulation and Synthesis**
 
 *Below steps are followed while simulating the design:* 
+
 **1. iverilog**:
        Verilog code for mux is written using below commands
 
