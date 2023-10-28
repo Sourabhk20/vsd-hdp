@@ -58,7 +58,7 @@ Progrees Image of iverilog:
 
 ## Day 1
 
-### Mux 2:1 (Behaviroal Level modeling)
+### Mux 2:1 implementation
 
 **Learning how to use iverilog, gtkwave and yosys for RTL Design, simulation and Synthesis**
 
