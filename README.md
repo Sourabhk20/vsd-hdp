@@ -63,7 +63,7 @@ Progrees Image of iverilog:
 **Learning how to use iverilog, gtkwave and yosys for RTL Design, simulation and Synthesis**
 
 *Below steps are followed while simulating the design:*
-1. iverilog:
+**1. iverilog**:
        Verilog code for mux is written using below commands
 
            $ iverilog design_verilog.v tb_design_verilog.v
@@ -71,7 +71,7 @@ Progrees Image of iverilog:
    Dumpfile is generated using gtkwave
            $ gkwave design.vcd 
 
-    RTL Design:
+   **RTL Design**:
      
        module good_mux (input i0, input i1, input sel, output reg y);
            always @ (*)
@@ -83,7 +83,7 @@ Progrees Image of iverilog:
                end
            endmodule
 
-    Testbench:
+    **Testbench**:
 
 
    	
@@ -117,14 +117,14 @@ Progrees Image of iverilog:
 		endmodule
 
 
-2. gtkwave simulation waveform:
+**2. gtkwave simulation waveform**:
   
 
    	 <img width="634" alt="gtkave_waveform" src="https://github.com/Sourabhk20/vsd-hdp/assets/148907305/2a84e1f6-d11b-46e4-ae6f-f8e811f90641">
 
 
 
-3. Synthesis:
+**3. Synthesis**:
           Synthesis is a process of transforming RTL into a gtae level netlist and mapping it to the technology specific gates.
 
           Commands used to run the synthesis:
