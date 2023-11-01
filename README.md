@@ -201,11 +201,14 @@ Progrees Image of iverilog:
  Multiple module consists of two submodules (submodule1 and submodule2):
 
  Hierarchical Synthesis output:
- 	Hierarchical synthesis preserves each module and evaluates the output separately 
+ 	Hierarchical synthesis preserves each module and evaluates the output with abstract representation of the submodules.
+  
 ![show](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/5ec2d379-c946-49c3-a002-34b4ccdd0704)
 
+
 Flat Synthesis output:
-	Flat synthesis combines both the submodules
+	Flat synthesis gives the deatiled representation of the submodules at the gate level.
+ 
 ![show_faltten](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/729a7088-afc6-4dc1-a2a8-b608ed1a4d8b)
 	
 
