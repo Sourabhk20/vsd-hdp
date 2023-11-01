@@ -196,9 +196,25 @@ Progrees Image of iverilog:
 
 ### Timing Libs, Hierarchical vs Flat Synthesis
 
-*Difference between Hierarchical vs Flat Synthesis*
+*Below steps are followed while simulating the Multiple Module design for Hierarchical vs Flat Synthesis*
 
-	Netlist:
+ Multiple module consists of two submodules (submodule1 and submodule2):
+
+ Hierarchical Synthesis output:
+ 	Hierarchical synthesis preserves each module and evaluates the output separately 
+![show](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/5ec2d379-c946-49c3-a002-34b4ccdd0704)
+
+Flat Synthesis output:
+	Flat synthesis combines both the submodules
+![show_faltten](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/729a7088-afc6-4dc1-a2a8-b608ed1a4d8b)
+	
+
+Difference between Hierarchical vs Flat Synthesis netlist:
+
+![flat vs hier](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/f3b74936-4ec8-491d-9d55-b46ffe298910)
+
+
+ Netlist:
 
  	Hierarchies are preserved
   
