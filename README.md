@@ -420,7 +420,38 @@ Multiplier 8:
 
  	
 
-  		
+**Sequential Opt**
+
+	DFF CONST1:
+
+ 			module dff_const1(input clk, input reset, output reg q);
+			always @(posedge clk, posedge reset)
+			begin
+				if(reset)
+					q <= 1'b0;
+				else
+					q <= 1'b1;
+			end
+			
+			endmodule
+
+
+
+	DFF const2:
+
+ 			module dff_const1(input clk, input reset, output reg q);
+			always @(posedge clk, posedge reset)
+			begin
+				if(reset)
+					q <= 1'b1;
+				else
+					q <= 1'b1;
+			end
+			
+			endmodule
+
+   
+
           
 
 
