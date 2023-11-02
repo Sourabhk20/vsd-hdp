@@ -441,6 +441,11 @@ So, the synthesis tool will not infer any combinational or sequnetial cells.
 
 ## Day 3 ##
 
+
+A. [Combinational Logic Optimization](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#Combinational-logic-optimization)
+
+B. [Sequential Logic Optimization](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#sequential-logic-optimization)
+
 ### Combinational Logic Optimization
 
 	Combinational logic optimization is necessary to improve the power, performance area of the design.
