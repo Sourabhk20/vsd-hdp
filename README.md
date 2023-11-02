@@ -629,17 +629,15 @@ For combinational logic below optimization techniques are use:
 
 ### Sequential Logic Optimization
 
-  Sequential logic optimization is used for below scenarios:
-  
-    1. Constant Propagation- Which means when constant value is propagated through the Flop. 
-    
-    2. state optimization- when unused states of the design are optimized.
-    
-    3. retiming- when there is a lrage positive slack, combinational logic between two flip flops is split and another Flip 
-       flop is added to remove the negative slack decrease timing of the different logic portions and increase frequency. 
+Sequential logic optimization is used for below scenarios:
 
-       
-    4. sequential logic cloning- This is used for physical aware synthesis to optimize the floop plan)
+1. Constant Propagation- Which means when constant value is propagated through the Flop. 
+
+2. state optimization- when unused states of the design are optimized.
+    
+3. retiming- when there is a lrage positive slack, combinational logic between two flip flops is split and another Flip flop is added to remove the negative slack decrease timing of the different logic portions and increase frequency. 
+
+4. sequential logic cloning- This is used for physical aware synthesis to optimize the floop plan)
 
 
 
