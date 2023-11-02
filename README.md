@@ -455,30 +455,38 @@ So, the synthesis tool will not infer any combinational or sequnetial cells.
 		yosys> abc -liberty <path to sky130_fd_sc_hd__tt_025C_1v80.lib>
 		yosys> show
 
+
+
     
-1. Opt_check.v
+  **1. Opt_check.v:**
 	
 		module opt_check (input a, input b, output y)
 			assign y = a?b:0;
    		endmodule
 
-Synthesis Output:
+  Synthesis Output:
 
 ![show_iopt check](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/07f0d297-8a02-4559-8776-024b6e424552)
   		
 
-2. Opt_check2.v
+
+
+
+  **2. Opt_check2.v:**
 	
 		module opt_check (input a, input b, output y)
 			assign y = a?1:b;
    		endmodule
 
-Synthesis Output:
+  Synthesis Output:
 
 ![optcheck2_show](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/e2bd8778-617f-4b06-afa0-590b6833cf75)
 
 
-3. Opt_check3.v
+  
+  
+  
+  **3. Opt_check3.v:**
 	
 		module opt_check (input a, input b, input c, output y)
 			assign y = a?(c?b:0):0;
@@ -488,46 +496,45 @@ Synthesis Output:
 		y = a!. 0 + a (c!. 0 + c.b)
 		y = abc
 
-Synthesis Output:
+  Synthesis Output:
 
- 
-  		
  
 ![opt_check3](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/1bb1d9a6-a2aa-494e-b982-ac590914b048)
 
 
 
 
-4. Opt_check4.v
+
+  **4. Opt_check4.v:**
 	
 		module opt_check (input a, input b, input c, output y)
 			assign y = a?(b?(a & c):c):(!c);
    		endmodule
 
-Synthesis Output:
+  Synthesis Output:
 
 ![show_optcheck 4](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/a3ea435c-18eb-4efc-8efb-4312f9cfd846)
 
 
-5. Multiple_Modules_opt.v
+  **5. Multiple_Modules_opt.v:**
 	
 		module opt_check (input a, input b, output y)
 			assign y = a?b:0;
    		endmodule
 
-Synthesis Output:
+  Synthesis Output:
 
 ![flatten opt multiple](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/6827e2bc-eba1-4c9a-9a63-17b1a1449bad)
 
   		
  
-6. Multiple_Modules_opt2.v
+  **6. Multiple_Modules_opt2.v:**
 	
 		module opt_check (input a, input b, output y)
 			assign y = a?b:0;
    		endmodule
 
-Synthesis Output:
+  Synthesis Output:
 
 
 ![mul_module_opt2](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/58fe37c0-52ac-4ad5-bc01-2e2918624708)
