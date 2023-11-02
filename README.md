@@ -196,7 +196,7 @@ Progrees Image of iverilog:
 ## Day 2 ##
 
 
-C. (Multiplier) [https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#2-bit-multiplier-and-3-bit-multiplier]
+C. [Multiplier] (https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#2-bit-multiplier-and-3-bit-multiplier)
 ### Timing Libs, Hierarchical vs Flat Synthesis
 
 *Below steps are followed while simulating the Multiple Module design for Hierarchical vs Flat Synthesis*
