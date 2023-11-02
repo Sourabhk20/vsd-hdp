@@ -441,7 +441,7 @@ So, the synthesis tool will not infer any combinational or sequnetial cells.
 
 ## Day 3 ##
 
-###Combinational Logic Optimization
+### Combinational Logic Optimization
 
 	Combinational logic optimization is necessary to improve the power, performance area of the design.
 	For combinational logic below optimization techniques are use:
@@ -618,7 +618,7 @@ So, the synthesis tool will not infer any combinational or sequnetial cells.
 
  	
 
-###Sequential Logic Optimization
+### Sequential Logic Optimization
 
 	Sequential logic optimization is used for below scenarios:
  		1. Constant Propagation- Which means when constant value is propagated through the Flop. 
