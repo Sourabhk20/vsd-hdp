@@ -597,6 +597,10 @@ Sequential logic optimization is used for below scenarios:
 
   Synthesis:
 
+
+![dff_const1_synth op](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/e93c5b27-02f7-4b5d-9614-5ae2a205d4f9)
+	
+
   ![dff_const1_show_active low reset](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/5401f0d6-8d7d-4fa4-9a76-d9594703e985)
 
 
@@ -615,6 +619,10 @@ Sequential logic optimization is used for below scenarios:
 			endmodule
 
   Simulation:
+
+![dff_const2_synth op](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/65067592-45e4-44a7-9e1c-f91a78107b4e)
+
+
 
  ![dff_const2 show](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/efe66d20-6ffe-44cf-9c8a-53eda333d449)
  	
