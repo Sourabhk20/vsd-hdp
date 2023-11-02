@@ -450,8 +450,11 @@ B. [Sequential Logic Optimization](https://github.com/Sourabhk20/vsd-hdp/blob/ma
 
   Combinational logic optimization is necessary to improve the power, performance area of the design.
   For combinational logic below optimization techniques are use:
+  
     1. Constant propagation: This means when cobinational logic is propgating a constant value irrespective of any chnages 
        in the input signal.
+
+       
     2. Boolean optimization: Thre are various boolean optimization techniques that can be used to optimize the logic such 
        as Min/Max, K-map etc.
 
@@ -627,11 +630,17 @@ B. [Sequential Logic Optimization](https://github.com/Sourabhk20/vsd-hdp/blob/ma
 
 ### Sequential Logic Optimization
 
-	Sequential logic optimization is used for below scenarios:
- 		1. Constant Propagation- Which means when constant value is propagated through the Flop. 
-   		2. state optimization- when unused states of the design are optimized.
-	  	3. retiming- when there is a lrage positive slack, combinational logic between two flip flops is split and another Flip flop is added to remove the negative slack decrease timing of the different logic portions and increase frequency
-    		4. sequential logic cloning- This is used for physical aware synthesis to optimize the floop plan)
+  Sequential logic optimization is used for below scenarios:
+  
+    1. Constant Propagation- Which means when constant value is propagated through the Flop. 
+    
+    2. state optimization- when unused states of the design are optimized.
+    
+    3. retiming- when there is a lrage positive slack, combinational logic between two flip flops is split and another Flip 
+       flop is added to remove the negative slack decrease timing of the different logic portions and increase frequency. 
+
+       
+    4. sequential logic cloning- This is used for physical aware synthesis to optimize the floop plan)
 
 
 
