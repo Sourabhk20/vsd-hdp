@@ -196,6 +196,8 @@ Progrees Image of iverilog:
 ## Day 2 ##
 
 
+B. [Simulation and Synthesis of various Flip Flops](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#simulation-and-synthesis-of-various-flip-flops)
+
 C. [Multiplier](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#2-bit-multiplier-and-3-bit-multiplier)
 
 
