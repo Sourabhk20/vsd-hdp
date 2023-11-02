@@ -204,7 +204,7 @@ C. [Multiplier](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#2-bit-
 
 ### Timing Libs, Hierarchical vs Flat Synthesis
 
-*Below steps are followed while simulating the Multiple Module design for Hierarchical vs Flat Synthesis*
+**Below steps are followed while simulating the Multiple Module design for Hierarchical vs Flat Synthesis**
 
  Multiple module consists of two submodules (submodule1 and submodule2):
 
@@ -452,10 +452,10 @@ Combinational logic optimization is necessary to improve the power, performance 
 
 For combinational logic below optimization techniques are use:
   
-1. Constant propagation: This means when cobinational logic is propgating a constant value irrespective of any chnages 
+**1. Constant propagation:** This means when cobinational logic is propgating a constant value irrespective of any chnages 
        in the input signal.
 
-2. Boolean optimization: Thre are various boolean optimization techniques that can be used to optimize the logic such as Min/Max, K-map etc.
+**2. Boolean optimization:** Thre are various boolean optimization techniques that can be used to optimize the logic such as Min/Max, K-map etc.
 
      
 	Below steps are followed to synthesize the design for optimization
@@ -553,91 +553,19 @@ For combinational logic below optimization techniques are use:
   		
  
  
- 
 
-	**Multiple module opt netlist**
-
-	
-			
-			module multiple_module_opt(a, b, c, d, y);
-			  wire _0_;
-			  wire _1_;
-			  wire _2_;
-			  wire _3_;
-			  wire _4_;
-			  wire \U1.y ;
-			  input a;
-			  wire a;
-			  input b;
-			  wire b;
-			  input c;
-			  wire c;
-			  input d;
-			  wire d;
-			  output y;
-			  wire y;
-			  sky130_fd_sc_hd__a21o_1 _5_ (
-			    .A1(_2_),
-			    .A2(_1_),
-			    .B1(_3_),
-			    .X(_4_)
-			  );
-			  assign _2_ = b;
-			  assign _3_ = c;
-			  assign y = _4_;
-			  assign _1_ = a;
-			endmodule
-
-
-
-
-
-
-
-
-	**Multiple_module opt_2 netlist**
-			 			
-			
-			module multiple_module_opt2(a, b, c, d, y);
-			  wire _0_;
-			  wire _1_;
-			  wire _2_;
-			  wire _3_;
-			  wire _4_;
-			  wire \U1.y ;
-			  wire \U2.y ;
-			  wire \U3.y ;
-			  input a;
-			  wire a;
-			  input b;
-			  wire b;
-			  input c;
-			  wire c;
-			  input d;
-			  wire d;
-			  output y;
-			  wire y;
-			  assign _4_ = 1'h0;
-			  assign _0_ = a;
-			  assign _2_ = c;
-			  assign _1_ = b;
-			  assign _3_ = d;
-			  assign y = _4_;
-			endmodule
-
- 	
 
 ### Sequential Logic Optimization
 
 Sequential logic optimization is used for below scenarios:
 
-1. Constant Propagation- Which means when constant value is propagated through the Flop. 
+**1. Constant Propagation**- Which means when constant value is propagated through the Flop. 
 
-2. state optimization- when unused states of the design are optimized.
+**2. state optimization**- when unused states of the design are optimized.
     
-3. retiming- when there is a lrage positive slack, combinational logic between two flip flops is split and another Flip flop is added to remove the negative slack decrease timing of the different logic portions and increase frequency. 
+**3. retiming**- when there is a lrage positive slack, combinational logic between two flip flops is split and another Flip flop is added to remove the negative slack decrease timing of the different logic portions and increase frequency. 
 
-4. sequential logic cloning- This is used for physical aware synthesis to optimize the floop plan)
+**4. sequential logic cloning**- This is used for physical aware synthesis to optimize the floop plan. (Physical aware synthesis takes logical representation of the design and transforms it into a physical layout that can be manufactured which involves differnet stpes such as floorplan, placment and routing)
 
 
 
@@ -850,6 +778,10 @@ Sequential logic optimization is used for below scenarios:
 
   ![counter_opt2_show](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/1fcc448f-3a8d-4ecc-9ac6-504a3c11f977)
 
+
+
+
+## Day 4
 
 
 
