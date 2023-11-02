@@ -315,6 +315,61 @@ Difference between Hierarchical vs Flat Synthesis netlist:
 
 
 
+**2. DFF async reset:**
+
+   **a. RTL Code:**
+		
+  		module dff_asyncres ( input clk , input async_reset , input sync_reset , input d , output reg q );
+		always @ (posedge clk, posedge async_reset )
+		begin
+			if (async_reset)
+				q <= 1'b0;
+			else	
+				q <= d;
+		end
+		endmodule
+
+  
+
+   **b. Simulation:**
+
+![dff_gtkwave](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/7f25557e-fdf3-4916-80b9-0a2eabc38fe2)
+
+
+
+  **c. Synthesis:**
+
+![show_dff](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/47337d9e-fa6b-4606-bf03-9a8102358d52)
+
+
+
+**3. DFF async_sync reset:**
+
+   **a. RTL Code:**
+		
+  		module dff_syncres ( input clk , input async_reset , input sync_reset , input d , output reg q );
+		always @ (posedge clk )
+		begin
+			if (sync_reset)
+				q <= 1'b0;
+			else	
+				q <= d;
+		end
+		endmodule
+
+  
+
+   **b. Simulation:**
+
+![dff_gtkwave_sync](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/3f2d905b-26b2-4f95-814f-12b848c1a35f)
+
+
+  **c. Synthesis:**
+
+![dff_sync_show](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/edba1026-cca2-4d1d-959d-d2d2a721a43d)
+
+
+
 Dff_async_sync reset
 
 	
