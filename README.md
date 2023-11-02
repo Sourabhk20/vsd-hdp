@@ -288,9 +288,9 @@ Difference between Hierarchical vs Flat Synthesis netlist:
 
 ### Simulation and Synthesis of various Flip Flops:
 
-  **DFF Sync**
-Dff_sync reset
-  	
+**1. DFF Sync reset:**
+
+   **a. RTL Code:**
 	module dff_syncres ( input clk , input async_reset , input sync_reset , input d , output reg q );
 	always @ (posedge clk )
 	begin
@@ -300,6 +300,16 @@ Dff_sync reset
 			q <= d;
 	end
 	endmodule
+
+   **b. Simulation:**
+
+![dff_gtkwave_sync](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/3f2d905b-26b2-4f95-814f-12b848c1a35f)
+
+
+  **c. Synthesis:**
+
+![dff_sync_show](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/edba1026-cca2-4d1d-959d-d2d2a721a43d)
+
 
 
 Dff_async_sync reset
