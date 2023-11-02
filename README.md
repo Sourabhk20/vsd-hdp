@@ -286,6 +286,7 @@ Difference between Hierarchical vs Flat Synthesis netlist:
 		endmodule
 
 
+### Simulation and Synthesis of various Flip Flops:
 
   **DFF Sync**
 Dff_sync reset
