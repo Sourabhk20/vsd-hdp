@@ -195,6 +195,7 @@ Progrees Image of iverilog:
 
 ## Day 2 ##
 
+A. [Timing Libs, Hierarchical vs Flat Synthesis](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#timing-libs-hierarchical-vs-flat-synthesis)
 
 B. [Simulation and Synthesis of various Flip Flops](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#simulation-and-synthesis-of-various-flip-flops)
 
