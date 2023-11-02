@@ -291,7 +291,8 @@ Difference between Hierarchical vs Flat Synthesis netlist:
 **1. DFF Sync reset:**
 
    **a. RTL Code:**
-		module dff_syncres ( input clk , input async_reset , input sync_reset , input d , output reg q );
+		
+  		module dff_syncres ( input clk , input async_reset , input sync_reset , input d , output reg q );
 		always @ (posedge clk )
 		begin
 			if (sync_reset)
@@ -300,6 +301,8 @@ Difference between Hierarchical vs Flat Synthesis netlist:
 				q <= d;
 		end
 		endmodule
+
+  
 
    **b. Simulation:**
 
