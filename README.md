@@ -721,7 +721,7 @@ So, the synthesis tool will not infer any combinational or sequnetial cells.
 				if(reset)
 				begin
 					q <= 1'b1;
-					q1 <= 1'b0;
+					q1 <= 1'b1;
 				end
 				else
 				begin
