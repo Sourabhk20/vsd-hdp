@@ -448,10 +448,12 @@ B. [Sequential Logic Optimization](https://github.com/Sourabhk20/vsd-hdp/blob/ma
 
 ### Combinational Logic Optimization
 
-	Combinational logic optimization is necessary to improve the power, performance area of the design.
-	For combinational logic below optimization techniques are use:
- 		1. Constant propagation: This means when cobinational logic is propgating a constant value irrespective of any chnages in the input signal.
-   		2. Boolean optimization: Thre are various boolean optimization techniques that can be used to optimize the logic such as Min/Max, K-map etc.
+  Combinational logic optimization is necessary to improve the power, performance area of the design.
+  For combinational logic below optimization techniques are use:
+    1. Constant propagation: This means when cobinational logic is propgating a constant value irrespective of any chnages 
+       in the input signal.
+    2. Boolean optimization: Thre are various boolean optimization techniques that can be used to optimize the logic such 
+       as Min/Max, K-map etc.
 
      
 	Below steps are followed to synthesize the design for optimization
