@@ -5,6 +5,7 @@ Author: Sourabh Kulkarni
 i. [Day 0](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-0)   
 ii. [Day 1](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-1)  
 iii. [Day 2](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-2)
+iv. [Day 3](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-3)
 
 
 ## Day 0 
@@ -428,17 +429,6 @@ So, the synthesis tool will not infer any combinational or sequnetial cells.
 ![mul8_show](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/dacd51a0-8996-4ba5-b05f-37da78a0e386)
 
 
-   	
-
-  
-Multiplier 8:
-
-	  	
-	
-
-
-
-	
 
 
 
