@@ -777,7 +777,9 @@ So, the synthesis tool will not infer any combinational or sequnetial cells.
 
   
 
-**Counter opt**
+  **Counter opt**
+        Here, the ourput of the 2bit counter changes from 000 to 111 and again starts from 3'b0.
+        But, as we have assigned the output q only to the bit 0 (count [0]), this code will infer only 1 Flip Flop.
 
  		module counter_opt (input clk , input reset , output q);
 		reg [2:0] count;
@@ -793,7 +795,7 @@ So, the synthesis tool will not infer any combinational or sequnetial cells.
 		
 		endmodule
 
-
+  Synthesis:
 
   **Counter opt 2**
 
