@@ -778,8 +778,10 @@ So, the synthesis tool will not infer any combinational or sequnetial cells.
   
 
   **Counter opt**
+  
         Here, the ourput of the 2bit counter changes from 000 to 111 and again starts from 3'b0.
-        But, as we have assigned the output q only to the bit 0 (count [0]), this code will infer only 1 Flip Flop.
+        But, as we have assigned the output q only to the bit 0 (count [0]).
+	The synthesis tool will only one flip flop and optimize the other logic as the primary output is dependent on only one bit.
 
  		module counter_opt (input clk , input reset , output q);
 		reg [2:0] count;
@@ -795,10 +797,22 @@ So, the synthesis tool will not infer any combinational or sequnetial cells.
 		
 		endmodule
 
+
+
   Synthesis:
+
+![counter_opt_show](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/fd166794-a0be-4dd3-bb4f-527410188b71)
+
+
+
+
 
   **Counter opt 2**
 
+	Here, we have assigned the output q only to all the 3 bits of the count for specific value (q is high when count = 3'b100)
+	The synthesis tool will infer 3 flip flops as the primary output of the flip flop depends on 3 bits.
+
+ 
 		module counter_opt (input clk , input reset , output q);
 		reg [2:0] count;
 		assign q = (count[2:0] == 3'b100);
@@ -812,6 +826,13 @@ So, the synthesis tool will not infer any combinational or sequnetial cells.
 		end
 		
 		endmodule
+
+
+
+  Synthesis:
+
+
+  ![counter_opt2_show](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/1fcc448f-3a8d-4ecc-9ac6-504a3c11f977)
 
 
 
