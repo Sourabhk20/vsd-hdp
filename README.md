@@ -808,20 +808,18 @@ There are two types of vaildation that can be ensured by the GLS:
   **1. RTL, Simulation and Synthesis of Ternary Operator along with GLS Simulation:**
 
 	Below RTL code is used for the Ternary operator example
-Ternary operator netlist:
 
   		module ternary_operator_mux (input i0, input i1, input sel, output y);
     			assign y = sel?i1:i0;
        		endmodule
 
-
-    For Simulation below commands are used:
+  For Simulation below commands are used:
 
     		iverilog <name verilog: ternary_operator_mux.v> <name testbench: tb_ternary_operator_mux.v>
 		./a.out
 		gtkwave tb_ternary_operator_mux.vcd
 
-	Simulation result:
+  Simulation result:
  		As mentioned in the code output y will be loaded with value of input i1 when select line(sel) is 1. When Sel is 0, output y will be loaded with the i0 value.
 
 
@@ -829,7 +827,7 @@ Ternary operator netlist:
 
 
    
-   Synthesis is performed with 
+Synthesis is performed with 
 
    		yosys> read_liberty -lib <path to sky130_fd_sc_hd__tt_025C_1v80.lib>
 		yosys> read_verilog <name of verilog file: ternary_operator_mux.v>
@@ -838,7 +836,13 @@ Ternary operator netlist:
 		yosys> write_verilog -noattr <name of netlist: ternary_operator_mux_net.v>
 		yosys> show
 
-	Steps followed for GLS simulation:
+
+
+![ternary_show](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/54a0db37-7e22-4d28-998f-591122060a6c)
+
+
+
+Steps followed for GLS simulation:
 
   		Verilog files related to standard cells are provided for the simulation.
     
@@ -853,8 +857,6 @@ Ternary operator netlist:
 
 ![GLS_netlist_ternary](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/d1419d6b-4a17-4d45-b1f2-3bddd3a001e8)
 
-
-![ternary_show](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/54a0db37-7e22-4d28-998f-591122060a6c)
 
 
 	
@@ -881,14 +883,14 @@ Below RTL code is used for the 2:1 Mux:
 
 
 
-    For Simulation below commands are used:
+For Simulation below commands are used:
 
     		iverilog <name verilog: ternary_operator_mux.v> <name testbench: tb_ternary_operator_mux.v>
 		./a.out
 		gtkwave tb_ternary_operator_mux.vcd
 
-	Simulation result:
- 		As mentioned in the code output y will be loaded with value of input i1 when select line(sel) is 1. When Sel is 0, output y will be loaded with the i0 value.
+Simulation result:
+ 	
 
 
 <img width="511" alt="bad_mux_rtl" src="https://github.com/Sourabhk20/vsd-hdp/assets/148907305/62679e15-f66d-4def-a983-a2fe5900f6f9">
@@ -904,7 +906,14 @@ Below RTL code is used for the 2:1 Mux:
 		yosys> write_verilog -noattr <name of netlist: ternary_operator_mux_net.v>
 		yosys> show
 
-	Steps followed for GLS simulation:
+
+
+
+![bad_mux show](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/cba7c1c1-1232-4051-9f01-3bf736081af0)
+
+
+
+Steps followed for GLS simulation:
 
   		Verilog files related to standard cells are provided for the simulation.
     
@@ -915,18 +924,16 @@ Below RTL code is used for the 2:1 Mux:
 
 
   
-	Simulation result:
+Simulation result after synthesis:
 
   	
 
-IMAGE
 ![bad_mux_always_netlist](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/29551b0c-7f0c-4226-8acc-eeb43947e544)
 
 
 
-SHOW IMAGE
 
-![bad_mux show](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/cba7c1c1-1232-4051-9f01-3bf736081af0)
+
 
 
 
@@ -950,20 +957,22 @@ Below RTL code is used for the Blocking assignment:
 
 
 
-    For Simulation below commands are used:
+For Simulation below commands are used:
 
     		iverilog <name verilog: ternary_operator_mux.v> <name testbench: tb_ternary_operator_mux.v>
 		./a.out
 		gtkwave tb_ternary_operator_mux.vcd
 
-	Simulation result:
+	
+ 
+Simulation result:
  
 ![bloking_gtkwave](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/63fb22c4-1191-48fb-9aec-6a167deed942)
 
 
 
    
-   Synthesis is performed with 
+Synthesis is performed with 
 
    		yosys> read_liberty -lib <path to sky130_fd_sc_hd__tt_025C_1v80.lib>
 		yosys> read_verilog <name of verilog file: blocking_caveat.v>
@@ -972,7 +981,13 @@ Below RTL code is used for the Blocking assignment:
 		yosys> write_verilog -noattr <name of netlist: blocking_caveat_net.v>
 		yosys> show
 
-	Steps followed for GLS simulation:
+
+
+![blocking_show](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/ba17fe6e-64dd-48fe-bdbe-f11fc6596184)
+
+
+
+Steps followed for GLS simulation:
 
   		Verilog files related to standard cells are provided for the simulation.
     
@@ -981,14 +996,13 @@ Below RTL code is used for the Blocking assignment:
 		./a.out
 		gtkwave tb_blocking_caveat.vcd
   
-	Simulation result:
+  
+Simulation result:
 
    
 ![bloking_gtkwave_netlist_stnthesis_simulation](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/534f316b-2458-44e6-b289-ec6d413a0676)
 
 
-
-![blocking_show](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/ba17fe6e-64dd-48fe-bdbe-f11fc6596184)
 
 
 
