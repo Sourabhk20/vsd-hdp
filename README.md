@@ -797,11 +797,11 @@ Sequential logic optimization is used for below scenarios:
 
 **Gate Level Simulation**
 
-	When we write RTL code, we use a test bench to validate it by providing the test vectors.
- 	Gate Level Simulation (GLS) is necessary to verify the logical correctness of the design once synthesis is completed. The netlist is provided to the simulation tool along with the testbench. 
+When we write RTL code, we use a test bench to validate it by providing the test vectors.
+Gate Level Simulation (GLS) is necessary to verify the logical correctness of the design once synthesis is completed. The netlist is provided to the simulation tool along with the testbench. 
   
-   There are two types of vaildation that can be ensured by the GLS:
- 	1. Functional: Functional validation is necessary and it checks the conditions such as **Missing sensitivity list** and **Use of blocking and non-blocking assignments**
+There are two types of vaildation that can be ensured by the GLS:
+	1. Functional: Functional validation is necessary and it checks the conditions such as **Missing sensitivity list** and **Use of blocking and non-blocking assignments**
   	2. Timing Aware: This type of validation checks functionality as well as ensure timing is met. (for different corners)
 
 
