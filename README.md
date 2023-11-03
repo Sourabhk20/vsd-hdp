@@ -796,10 +796,13 @@ Sequential logic optimization is used for below scenarios:
 ## Day 4
 
 **Gate Level Simulation**
+
 	When we write RTL code, we use a test bench to validate it by providing the test vectors.
- 	Gate Level Simulation (GLS) is necessary to verify the logical correctness of the design once synthesis is completed. The netlist is provided to the simulation tool along with the testbench.
-	There are two types of vaildation that can be ensured by the GLS:
+ 	Gate Level Simulation (GLS) is necessary to verify the logical correctness of the design once synthesis is completed. The netlist is provided to the simulation tool along with the testbench. 
+  
+   There are two types of vaildation that can be ensured by the GLS:
  	1. Functional: Functional validation is necessary and it checks the conditions such as **Missing sensitivity list** and **Use of blocking and non-blocking assignments**
+  	2. Timing Aware: This type of validation checks functionality as well as ensure timing is met. (for different corners)
 
 
   **1. RTL, Simulation and Synthesis of Ternary Operator along with GLS Simulation:**
@@ -821,7 +824,8 @@ Ternary operator netlist:
 	Simulation result:
  		As mentioned in the code output y will be loaded with value of input i1 when select line(sel) is 1. When Sel is 0, output y will be loaded with the i0 value.
 
-IMAGE
+
+![show_ternary](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/be6aca4a-45b0-4dee-9f0a-9f451f7c7869)
 
 
    
@@ -839,52 +843,24 @@ IMAGE
   		Verilog files related to standard cells are provided for the simulation.
     
    		iverilog <path to verilog model: ../mylib/verilog_model/primitives.v> <path to 		 
-                sky130_fd_sc_hd__tt_025C_1v80.lib: ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib> <name netlist: 				ternary_operator_mux_net.v> <name testbench: tb_ternary_operator_mux.v>
+                sky130_fd_sc_hd__tt_025C_1v80.lib: ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib> <name netlist:ternary_operator_mux_net.v> <name testbench: tb_ternary_operator_mux.v>
 		./a.out
 		gtkwave tb_ternary_operator_mux.vcd
   
-	Simulation result:
+	Synthesis Simulation result:
  		As shown in the image, output y follows the correct behavior of the input signal similar to the RTL simulation. Hence, Synthesis simulation and RTL simulation are correct for this design.
   	
 
-IMAGE
+![GLS_netlist_ternary](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/d1419d6b-4a17-4d45-b1f2-3bddd3a001e8)
 
 
-
-SHOW IMAGE
-
-	Generated netlist after synthesis:
-			module ternary_operator_mux(i0, i1, sel, y);
-			  wire _0_;
-			  wire _1_;
-			  wire _2_;
-			  wire _3_;
-			  input i0;
-			  wire i0;
-			  input i1;
-			  wire i1;
-			  input sel;
-			  wire sel;
-			  output y;
-			  wire y;
-			  sky130_fd_sc_hd__mux2_1 _4_ (
-			    .A0(_0_),
-			    .A1(_1_),
-			    .S(_2_),
-			    .X(_3_)
-			  );
-			  assign _0_ = i0;
-			  assign _1_ = i1;
-			  assign _2_ = sel;
-			  assign y = _3_;
-			endmodule
+![ternary_show](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/54a0db37-7e22-4d28-998f-591122060a6c)
 
 
+	
 
 
-
-
-  **1. RTL, Simulation and Synthesis of Bad mux along with GLS Simulation:**
+  **2. RTL, Simulation and Synthesis of Bad mux along with GLS Simulation:**
 		Here, an example of 2:1 Mux is shown which will give mismatch between RTL simulation and Gate level simulation as there is a missing sensitivity list.
 
   	
@@ -914,7 +890,8 @@ Below RTL code is used for the 2:1 Mux:
 	Simulation result:
  		As mentioned in the code output y will be loaded with value of input i1 when select line(sel) is 1. When Sel is 0, output y will be loaded with the i0 value.
 
-IMAGE
+
+<img width="511" alt="bad_mux_rtl" src="https://github.com/Sourabhk20/vsd-hdp/assets/148907305/62679e15-f66d-4def-a983-a2fe5900f6f9">
 
 
    
@@ -935,21 +912,86 @@ IMAGE
                 sky130_fd_sc_hd__tt_025C_1v80.lib: ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib> <name netlist: 				ternary_operator_mux_net.v> <name testbench: tb_ternary_operator_mux.v>
 		./a.out
 		gtkwave tb_ternary_operator_mux.vcd
+
+
   
 	Simulation result:
- 		As shown in the image, output y follows the correct behavior of the input signal similar to the RTL simulation. Hence, Synthesis simulation and RTL simulation are correct for this design.
+
   	
 
 IMAGE
+![bad_mux_always_netlist](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/29551b0c-7f0c-4226-8acc-eeb43947e544)
 
 
 
 SHOW IMAGE
 
+![bad_mux show](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/cba7c1c1-1232-4051-9f01-3bf736081af0)
 
 
 
-BAD MUX:
+**3. RTL, Simulation and Synthesis of Blocking assignment along with GLS Simulation:**
+		Here, an example of blocking assignment and effect of blocking assignmnet on the output. As shown in the code the 1st statement (y = q & C) will be evaluated before the next statement (q = a | b). So, when evalauting y, it will consider previous value of the q and hence this design will not observe the intended behavior.
+  	
+Below RTL code is used for the Blocking assignment:
+	Here, inside the sensitivity list all the inputs are not mentioned, hence during the simulation the output will only change if sel changes.
+ 	So, the simulation shows the behavior like a flop where output changes when sel is 1 or 0.
+
+
+  		module bad_mux (input i0 , input i1 , input sel , output reg y);
+		always @ (sel)
+		begin
+			if(sel)
+				y <= i1;
+			else 
+				y <= i0;
+		end
+		endmodule
+
+
+
+    For Simulation below commands are used:
+
+    		iverilog <name verilog: ternary_operator_mux.v> <name testbench: tb_ternary_operator_mux.v>
+		./a.out
+		gtkwave tb_ternary_operator_mux.vcd
+
+	Simulation result:
+ 
+![bloking_gtkwave](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/63fb22c4-1191-48fb-9aec-6a167deed942)
+
+
+
+   
+   Synthesis is performed with 
+
+   		yosys> read_liberty -lib <path to sky130_fd_sc_hd__tt_025C_1v80.lib>
+		yosys> read_verilog <name of verilog file: blocking_caveat.v>
+		yosys> synth -top <name of the top module: blocking_caveat>
+		yosys> abc -liberty <path to sky130_fd_sc_hd__tt_025C_1v80.lib>
+		yosys> write_verilog -noattr <name of netlist: blocking_caveat_net.v>
+		yosys> show
+
+	Steps followed for GLS simulation:
+
+  		Verilog files related to standard cells are provided for the simulation.
+    
+   		iverilog <path to verilog model: ../mylib/verilog_model/primitives.v> <path to 		 
+                sky130_fd_sc_hd__tt_025C_1v80.lib: ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib> <name netlist: blocking_caveat_net.v> <name testbench: blocking_caveat.v>
+		./a.out
+		gtkwave tb_blocking_caveat.vcd
+  
+	Simulation result:
+
+   
+![bloking_gtkwave_netlist_stnthesis_simulation](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/534f316b-2458-44e6-b289-ec6d413a0676)
+
+
+
+![blocking_show](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/ba17fe6e-64dd-48fe-bdbe-f11fc6596184)
+
+
+
 
 	
 
