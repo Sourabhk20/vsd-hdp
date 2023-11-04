@@ -940,12 +940,18 @@ Simulation result after synthesis:
 
 
 
+
+
+
+
 **3. RTL, Simulation and Synthesis of Blocking assignment along with GLS Simulation:**
-		Here, an example of blocking assignment and effect of blocking assignmnet on the output. As shown in the code the 1st statement (y = q & C) will be evaluated before the next statement (q = a | b). So, when evalauting y, it will consider previous value of the q and hence this design will not observe the intended behavior.
+
+  Here, an example of blocking assignment and effect of blocking assignmnet on the output. As shown in the code the 1st statement (y = q & C) will be evaluated before the 
+  next statement (q = a | b). So, when evalauting y, it will consider previous value of the q and hence this design will not observe the intended behavior.
   	
 Below RTL code is used for the Blocking assignment:
-	Here, inside the sensitivity list all the inputs are not mentioned, hence during the simulation the output will only change if sel changes.
- 	So, the simulation shows the behavior like a flop where output changes when sel is 1 or 0.
+  Here, inside the sensitivity list all the inputs are not mentioned, hence during the simulation the output will only change if sel changes.
+  So, the simulation shows the behavior like a flop where output changes when sel is 1 or 0.
 
 
   		module bad_mux (input a , input b , input c , output reg y);
