@@ -844,15 +844,16 @@ Synthesis is performed with
 
 Steps followed for GLS simulation:
 
-  		Verilog files related to standard cells are provided for the simulation.
+  	Verilog files related to standard cells are provided for the simulation.
     
    		iverilog <path to verilog model: ../mylib/verilog_model/primitives.v> <path to 		 
-                sky130_fd_sc_hd__tt_025C_1v80.lib: ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib> <name netlist:ternary_operator_mux_net.v> <name testbench: tb_ternary_operator_mux.v>
+                sky130_fd_sc_hd__tt_025C_1v80.lib: ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib> <name netlist:ternary_operator_mux_net.v> <name testbench: 				tb_ternary_operator_mux.v>
 		./a.out
 		gtkwave tb_ternary_operator_mux.vcd
   
-	Synthesis Simulation result:
- 		As shown in the image, output y follows the correct behavior of the input signal similar to the RTL simulation. Hence, Synthesis simulation and RTL simulation are correct for this design.
+  Synthesis Simulation result:
+ 		As shown in the image, output y follows the correct behavior of the input signal similar to the RTL simulation. Hence, Synthesis simulation and RTL 
+  simulation are correct for this design.
   	
 
 ![GLS_netlist_ternary](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/d1419d6b-4a17-4d45-b1f2-3bddd3a001e8)
@@ -863,10 +864,10 @@ Steps followed for GLS simulation:
 
 
   **2. RTL, Simulation and Synthesis of Bad mux along with GLS Simulation:**
-		Here, an example of 2:1 Mux is shown which will give mismatch between RTL simulation and Gate level simulation as there is a missing sensitivity list.
+	Here, an example of 2:1 Mux is shown which will give mismatch between RTL simulation and Gate level simulation as there is a missing sensitivity list.
 
   	
-Below RTL code is used for the 2:1 Mux:
+  Below RTL code is used for the 2:1 Mux:
 	Here, inside the sensitivity list all the inputs are not mentioned, hence during the simulation the output will only change if sel changes.
  	So, the simulation shows the behavior like a flop where output changes when sel is 1 or 0.
 
@@ -897,7 +898,7 @@ Simulation result:
 
 
    
-   Synthesis is performed with 
+Synthesis is performed with below commands:
 
    		yosys> read_liberty -lib <path to sky130_fd_sc_hd__tt_025C_1v80.lib>
 		yosys> read_verilog <name of verilog file: bad_mux.v>
@@ -917,7 +918,8 @@ Steps followed for GLS simulation:
 
   		Verilog files related to standard cells are provided for the simulation.
     
-   		iverilog <path to verilog model: ../mylib/verilog_model/primitives.v> <path to sky130_fd_sc_hd__tt_025C_1v80.lib: ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib> <name netlist: bad_mux_net.v> <name testbench: tb_bad_mux.v>
+   		iverilog <path to verilog model: ../mylib/verilog_model/primitives.v> <path to sky130_fd_sc_hd__tt_025C_1v80.lib: 				 
+                ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib> <name netlist: bad_mux_net.v> <name testbench: tb_bad_mux.v>
 		./a.out
 		gtkwave tb_bad_mux.vcd
 
@@ -970,7 +972,7 @@ Simulation result:
 
 
    
-Synthesis is performed with 
+Synthesis is performed with below commands:
 
    		yosys> read_liberty -lib <path to sky130_fd_sc_hd__tt_025C_1v80.lib>
 		yosys> read_verilog <name of verilog file: blocking_caveat.v>
