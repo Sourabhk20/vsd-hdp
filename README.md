@@ -772,7 +772,7 @@ Sequential logic optimization is used for below scenarios:
 
   **Counter opt 2**
 
-	Here, we have assigned the output q only to all the 3 bits of the count for specific value (q is high when count = 3'b100)
+  Here, we have assigned the output q only to all the 3 bits of the count for specific value (q is high when count = 3'b100)
 	The synthesis tool will infer 3 flip flops as the primary output of the flip flop depends on 3 bits.
 
  
@@ -824,9 +824,9 @@ There are two types of vaildation that can be ensured by the GLS:
 
   For Simulation below commands are used:
 
-    		iverilog <name verilog: ternary_operator_mux.v> <name testbench: tb_ternary_operator_mux.v>
-		./a.out
-		gtkwave tb_ternary_operator_mux.vcd
+    	iverilog <name verilog: ternary_operator_mux.v> <name testbench: tb_ternary_operator_mux.v>
+	./a.out
+	gtkwave tb_ternary_operator_mux.vcd
 
   Simulation result:
  		As mentioned in the code output y will be loaded with value of input i1 when select line(sel) is 1. When Sel is 0, output y will be loaded with the i0 value.
