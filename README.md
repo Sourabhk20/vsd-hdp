@@ -494,6 +494,8 @@ For combinational logic below optimization techniques are use:
 			assign y = a?1:b;
    		endmodule
 
+
+
   Synthesis Output:
 
 ![optcheck2_show](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/e2bd8778-617f-4b06-afa0-590b6833cf75)
@@ -511,6 +513,9 @@ For combinational logic below optimization techniques are use:
 	Optimization:
 		y = a!. 0 + a (c!. 0 + c.b)
 		y = abc
+
+
+
 
   Synthesis Output:
 
@@ -669,7 +674,7 @@ Sequential logic optimization is used for below scenarios:
 
   **4. DFF CONST4:**
 
-     			module dff_const3(input clk, input reset, output reg q);
+            module dff_const3(input clk, input reset, output reg q);
 			reg q1;
 			
 			always @(posedge clk, posedge reset)
@@ -722,6 +727,8 @@ Sequential logic optimization is used for below scenarios:
 		
 		endmodule
 
+
+
   Simulation:
 
 ![dff_const5](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/66253d6e-c131-4260-824e-9f087240b099)
@@ -735,8 +742,8 @@ Sequential logic optimization is used for below scenarios:
 
   **Counter opt**
   
-        Here, the ourput of the 2bit counter changes from 000 to 111 and again starts from 3'b0.
-        But, as we have assigned the output q only to the bit 0 (count [0]).
+    Here, the ourput of the 2bit counter changes from 000 to 111 and again starts from 3'b0.
+    But, as we have assigned the output q only to the bit 0 (count [0]).
 	The synthesis tool will only one flip flop and optimize the other logic as the primary output is dependent on only one bit.
 
  		module counter_opt (input clk , input reset , output q);
