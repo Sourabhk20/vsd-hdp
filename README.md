@@ -802,9 +802,9 @@ Gate Level Simulation (GLS) is necessary to verify the logical correctness of th
   
 There are two types of vaildation that can be ensured by the GLS:
 
-	1. Functional: Functional validation is necessary and it checks the conditions such as **Missing sensitivity list** and **Use of blocking and non-blocking assignments**
+  1. Functional: Functional validation is necessary and it checks the conditions such as **Missing sensitivity list** and **Use of blocking and non-blocking assignments**
  
-  	2. Timing Aware: This type of validation checks functionality as well as ensure timing is met. (for different corners)
+  2. Timing Aware: This type of validation checks functionality as well as ensure timing is met. (for different corners)
 
 
   **1. RTL, Simulation and Synthesis of Ternary Operator along with GLS Simulation:**
