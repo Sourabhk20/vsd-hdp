@@ -890,7 +890,7 @@ For Simulation below commands are used:
 		gtkwave tb_ternary_operator_mux.vcd
 
 Simulation result:
- 	
+ 	As observed in the fig, the output y doesn't change when sel doesn't change even if i0 and i1 changes, this is not the actual behavior of the mux.
 
 
 <img width="511" alt="bad_mux_rtl" src="https://github.com/Sourabhk20/vsd-hdp/assets/148907305/62679e15-f66d-4def-a983-a2fe5900f6f9">
@@ -900,10 +900,10 @@ Simulation result:
    Synthesis is performed with 
 
    		yosys> read_liberty -lib <path to sky130_fd_sc_hd__tt_025C_1v80.lib>
-		yosys> read_verilog <name of verilog file: ternary_operator_mux.v>
-		yosys> synth -top <name of the top module: ternary_operator_mux>
+		yosys> read_verilog <name of verilog file: bad_mux.v>
+		yosys> synth -top <name of the top module: bad_mux>
 		yosys> abc -liberty <path to sky130_fd_sc_hd__tt_025C_1v80.lib>
-		yosys> write_verilog -noattr <name of netlist: ternary_operator_mux_net.v>
+		yosys> write_verilog -noattr <name of netlist: bad_mux_net.v>
 		yosys> show
 
 
@@ -917,10 +917,9 @@ Steps followed for GLS simulation:
 
   		Verilog files related to standard cells are provided for the simulation.
     
-   		iverilog <path to verilog model: ../mylib/verilog_model/primitives.v> <path to 		 
-                sky130_fd_sc_hd__tt_025C_1v80.lib: ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib> <name netlist: 				ternary_operator_mux_net.v> <name testbench: tb_ternary_operator_mux.v>
+   		iverilog <path to verilog model: ../mylib/verilog_model/primitives.v> <path to sky130_fd_sc_hd__tt_025C_1v80.lib: ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib> <name netlist: bad_mux_net.v> <name testbench: tb_bad_mux.v>
 		./a.out
-		gtkwave tb_ternary_operator_mux.vcd
+		gtkwave tb_bad_mux.vcd
 
 
   
@@ -945,13 +944,12 @@ Below RTL code is used for the Blocking assignment:
  	So, the simulation shows the behavior like a flop where output changes when sel is 1 or 0.
 
 
-  		module bad_mux (input i0 , input i1 , input sel , output reg y);
-		always @ (sel)
+  		module bad_mux (input a , input b , input c , output reg y);
+    		wire q;
+		always @ (*)
 		begin
-			if(sel)
-				y <= i1;
-			else 
-				y <= i0;
+			y = q & c;
+   			q = a | b;
 		end
 		endmodule
 
@@ -959,9 +957,9 @@ Below RTL code is used for the Blocking assignment:
 
 For Simulation below commands are used:
 
-    		iverilog <name verilog: ternary_operator_mux.v> <name testbench: tb_ternary_operator_mux.v>
+    		iverilog <name verilog: blocking_caveat.v> <name testbench: tb_blocking_caveat.v>
 		./a.out
-		gtkwave tb_ternary_operator_mux.vcd
+		gtkwave tb_blocking_caveat.vcd
 
 	
  
@@ -992,7 +990,7 @@ Steps followed for GLS simulation:
   		Verilog files related to standard cells are provided for the simulation.
     
    		iverilog <path to verilog model: ../mylib/verilog_model/primitives.v> <path to 		 
-                sky130_fd_sc_hd__tt_025C_1v80.lib: ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib> <name netlist: blocking_caveat_net.v> <name testbench: blocking_caveat.v>
+                sky130_fd_sc_hd__tt_025C_1v80.lib: ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib> <name netlist: blocking_caveat_net.v> <name testbench: tb_blocking_caveat.v>
 		./a.out
 		gtkwave tb_blocking_caveat.vcd
   
@@ -1005,8 +1003,5 @@ Simulation result:
 
 
 
-
-
-	
 
 		
