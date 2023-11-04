@@ -795,7 +795,7 @@ Sequential logic optimization is used for below scenarios:
 
 ## Day 4
 
-**Gate Level Simulation**
+### Gate Level Simulation
 
 When we write RTL code, we use a test bench to validate it by providing the test vectors.
 Gate Level Simulation (GLS) is necessary to verify the logical correctness of the design once synthesis is completed. The netlist is provided to the simulation tool along with the testbench. 
