@@ -1031,5 +1031,5 @@ Simulation result:
 	Debug, we want to find the way how to perform a.out on the RISC-v compiler.
  	spike
   	1. luipc: load uppper immediate, bit 12 to 31 is filled with the contents mentioned in the instruction
-
+		stack , 16 dec, 10 hex subtarcted from the pointer
 		
