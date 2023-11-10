@@ -1029,5 +1029,7 @@ Simulation result:
 
 **LAB3**:
 	Debug, we want to find the way how to perform a.out on the RISC-v compiler.
+ 	spike
+  	1. luipc: load uppper immediate, bit 12 to 31 is filled with the contents mentioned in the instruction
 
 		
