@@ -1031,7 +1031,7 @@ Simulation result:
 	Debug, we want to find the way how to perform a.out on the RISC-v compiler.
  	spike
 
-	Sum 1 to N, run it with the Ofast and O1 option where, O1 is the moderate level of optimizationand O1 is highest level of optimization.
+Sum 1 to N, run it with the Ofast and O1 option where, O1 is the moderate level of optimizationand O1 is highest level of optimization.
  
 
  ![sum1ton_main_Ofast](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/4e81253c-5153-436d-94cb-f469b24007c0)
