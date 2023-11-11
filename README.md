@@ -6,7 +6,7 @@ i. [Day 0](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-0)
 ii. [Day 1](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-1)  
 iii. [Day 2](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-2)   
 iv. [Day 3](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-3)   
-v. [Day 4](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-4) 
+v. [Day 4](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-4)  
 vi. [Day 5](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-5) 
 
 
@@ -1030,9 +1030,18 @@ Simulation result:
 **LAB3**:
 	Debug, we want to find the way how to perform a.out on the RISC-v compiler.
  	spike
+
+	Sum 1 to N, run it with the Ofast and O1 option where, O1 is the moderate level of optimizationand O1 is highest level of optimization.
+ 
+
+ ![sum1ton_main_Ofast](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/4e81253c-5153-436d-94cb-f469b24007c0)
+
+  
   	1. luipc: load uppper immediate, bit 12 to 31 is filled with the contents mentioned in the instruction
 		stack , 16 dec, 10 hex subtarcted from the pointer
 
+
+	
 
 
 **Lab** : **C and assembly program to count sum from 1 to N**
