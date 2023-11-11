@@ -1032,4 +1032,39 @@ Simulation result:
  	spike
   	1. luipc: load uppper immediate, bit 12 to 31 is filled with the contents mentioned in the instruction
 		stack , 16 dec, 10 hex subtarcted from the pointer
+
+
+
+**Lab** : **C and assembly program to count sum from 1 to N**
+
+	C Code:
+
+   		#include <stdio.h>
+
+		extern int load(int x, int y);
 		
+		int main() {
+			int result = 0;
+			int count = 9;
+			result = load(0x0, count+1);
+			printf("Sum of number from 1 to %d is %d \n", count, result);
+		}
+
+
+
+  	Assembly code:
+
+			.section .text
+			.global load
+			.type load, @function
+			
+			load: 
+				add a4, a0, zero 	// Intialize sum register a4 with 0x0
+				add a2, a0, a1 		// Store count of 10 in register a2. Register a1 is loaded with 0xa (decimal 10) from main
+				add a3, a0, zero 	// Initialize intermediate sum register a3 by 0
+			loop:	add a4, a3, a4		// Incremental addition
+				addi a3, a3, 1		// Increment intermediate register by 1
+				blt a3, a2, loop 	// If a3 is less than a2, branch to label named <loop>
+				add a0, a4, zero  	// Store final result to register a0, so that it can be read by main program
+				ret
+
