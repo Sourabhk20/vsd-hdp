@@ -1083,3 +1083,84 @@ Spike debugger output showing the contents of stack pointer got updated.
 				add a0, a4, zero  	// Store final result to register a0, so that it can be read by main program
 				ret
 
+
+
+
+
+#Makerchip
+
+		Comb CAlc:
+
+  				\m4_TLV_version 1d: tl-x.org
+				\SV
+				   m4_makerchip_module
+				\TLV
+				   
+				   // Sample logical operators.
+				   // |: OR
+				   // &: AND
+				   // ^: XOR
+				   //$out = $in1 & $in2;
+				   
+				   //$out[4:0] = $in1[3:0] + $in2[3:0];
+				   
+				   // ip values are 32 bit, we are converting them to 4 bit vectors
+				   // rand1 and rand2 are not assigned, makerchip env will make up value for that input
+				   // makerchip come up with tht values, limit rnage from 0 to 15(f)
+				   $val1[31:0] = $rand1[3:0];
+				   $val2[31:0] = $rand2[3:0];
+				   
+				   //Save power by selcting perofrming operations we need to perform
+				   $sum[31:0] = $val1[31:0] + $val2[31:0];
+				   $diff[31:0] = $val1[31:0] - $val2[31:0];
+				   $prod[31:0] = $val1[31:0] * $val2[31:0];
+				   $quot[31:0] = $val1[31:0] / $val2[31:0];
+				   
+				   $out[31:0] = ($op[1:0] == 2'b00) ? $sum : 
+				                                 ($op[1:0] == 2'b01) ? $diff :
+				                                    ($op[1:0] == 2'b10) ? $prod :
+				                                       $quot;
+				                                       
+				   
+				\SV
+				endmodule
+
+
+
+    		Seq Calc:
+
+      				\m5_TLV_version 1d: tl-x.org
+				\m5
+				   
+				   // =================================================
+				   // Welcome!  New to Makerchip? Try the "Learn" menu.
+				   // =================================================
+				   
+				   //use(m5-1.0)   /// uncomment to use M5 macro library.
+				\SV
+				   // Macro providing required top-level module definition, random
+				   // stimulus support, and Verilator config.
+				   m5_makerchip_module   // (Expanded in Nav-TLV pane.)
+				\TLV
+				   $reset = *reset;
+				   
+				   $val1[31:0] = >>1$out[31:0];
+				   $val2[31:0] = $rand2[3:0];
+				   $op[1:0] = $rand3[3:0];
+				   
+				   //Save power by selcting perofrming operations we need to perform
+				   $sum[31:0] = $val1[31:0] + $val2[31:0];
+				   $diff[31:0] = $val1[31:0] - $val2[31:0];
+				   $prod[31:0] = $val1[31:0] * $val2[31:0];
+				   $quot[31:0] = $val1[31:0] / $val2[31:0];
+				   
+				   $out[31:0] = $reset ? 32'b0 : (($op[1:0] == 2'b00) ? $sum : 
+				                                 ($op[1:0] == 2'b01) ? $diff :
+				                                    ($op[1:0] == 2'b10) ? $prod :
+				                                       $quot);
+				\SV
+				   endmodule
+
+
+
+
