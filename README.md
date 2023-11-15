@@ -1292,3 +1292,52 @@ Spike debugger output showing the contents of stack pointer got updated.
 				!  *passed = *cyc_cnt > 16'd30;
 				\SV
 				   endmodule
+
+
+	Cycle caluclator with valid bit:
+
+ 					\m4_TLV_version 1d: tl-x.org
+					\SV
+					   `include "sqrt32.v";
+					   
+					   m4_makerchip_module
+					\TLV
+					   
+					   // Stimulus
+					     
+					   // if valid, we are adding new distance to the total distance
+					   
+					   |calc
+					      @0
+					         $reset = *reset;
+					      @1
+					         $valid = $reset ? 0 : (>>1$valid +1);
+					         $valid_or_reset = $valid || $reset;
+					      ?$valid
+					           
+					         //$reset = *reset;
+					         @1
+					            //$reset = *reset;
+					
+					            $val1[31:0] = >>2$out[31:0];
+					            $val2[31:0] = $rand2[3:0];
+					            $op[1:0] = $rand3[3:0];
+					
+					            //Save power by selcting perofrming operations we need to perform
+					            $sum[31:0] = $val1[31:0] + $val2[31:0];
+					            $diff[31:0] = $val1[31:0] - $val2[31:0];
+					            $prod[31:0] = $val1[31:0] * $val2[31:0];
+					            $quot[31:0] = $val1[31:0] / $val2[31:0];
+					
+					            //$valid = $reset ? 0 : (>>1$valid + 1);
+					
+					
+					         @2
+					            $out[31:0] = $valid_or_reset ? (($op[1:0] == 2'b00) ? $sum : 
+					                                          ($op[1:0] == 2'b01) ? $diff :
+					                                             ($op[1:0] == 2'b10) ? $prod :
+					                                                $quot) : >>1$out[31:0];
+					                           
+					!  *passed = *cyc_cnt > 16'd30;
+					\SV
+					   endmodule
