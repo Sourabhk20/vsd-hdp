@@ -1236,6 +1236,8 @@ Makerchip uses Transaction level verilog is advanced version to the verilog and 
 
 	Seq calc with counter:
 
+ 			WHen we add counter logic to the existing sequential calcultor we get,
+
    				\m5_TLV_version 1d: tl-x.org
 				\m5
 				   
