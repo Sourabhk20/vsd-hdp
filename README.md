@@ -1118,10 +1118,10 @@ Spike debugger output showing the contents of stack pointer got updated.
 # Day 7 
 
 ## Digital Logic with TL- Verilog and Makerchip
-	Makerchip is an online platform which provides instant access to the open source tools from the browser which is developed by Redwood EDA.
- 	It allows us to code, compile, simulate, and debug Verilog designs, all from the browser. We can simulate the design and obesrve the bock diagrams as 		well as waveforms, and novel visualization capabilities of our design.
+Makerchip is an online platform which provides instant access to the open source tools from the browser which is developed by Redwood EDA.
+It allows us to code, compile, simulate, and debug Verilog designs, all from the browser. We can simulate the design and obesrve the bock diagrams as 		well as waveforms, and novel visualization capabilities of our design.
 
-  	Makerchip uses Transaction level verilog is advanced version to the verilog and provides a simple syntax and also allows for pipelines and transactions.
+Makerchip uses Transaction level verilog is advanced version to the verilog and provides a simple syntax and also allows for pipelines and transactions.
 
 ### Combinational Logic uisng Makerchip
 
@@ -1185,12 +1185,12 @@ Spike debugger output showing the contents of stack pointer got updated.
 
 ### Sequential Logic uisng Makerchip
 
-		1. Counter:
-  			In TL verilog to add a previous value to the next (>>1 means ahead by 1 and will be conisdred for the next cycle)
+	1. Counter:	
+  		In TL verilog to add a previous value to the next (>>1 means ahead by 1 and will be conisdred for the next cycle)
 
 ![counter](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/dbb42f3e-18fe-45f2-9219-49728d7c32ad)
 
-		2. Sequential Calculator:
+	2. Sequential Calculator:
 
 		Output value is fed back to the value 1 by giving the feedback loop from out to val1 input.
    		Based on the value of op signal (2 bits), either sum, diff, prod or quot is calculated.
