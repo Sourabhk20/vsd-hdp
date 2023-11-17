@@ -1023,10 +1023,36 @@ Simulation result:
 
 # Day 5
 
-## RISC-V 
+## Introduction to RISC-V ISA and GNU Compiler Toolchain
 
 **LAB 1**
+	a. Write a C program to compute Sum from 1 to N.
 
+  	b. Run this program using RISC-V simulator.
+   		Below commands are used to run this:
+
+			riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o sum1ton.o sum1ton.c
+   			Here,
+      			riscv64-unknown-elf-gcc = to invoke the gcc compiler
+	 		-O1 = Specifies the optimization level. (O1 is moderate level of optimization and Ofast is highest level of optimization
+    			-mabi = This flag specifies the ABI (Application Binary Interface) to be used. In this case, it is set to lp64, which stands for "long 				and pointer 64-bit." This ABI defines the sizes of basic C types, such as int and pointers. lp64 means that int is 32 bits, and 				pointers and long types are 64 bits.
+       			-march = specifies the target RISCV architecture and ISA, rv64i means a 64-bit RISC-V architecture with the base integer ISA.
+	  		-o = output file name and format
+     			-c = input source file and name
+
+  		Assembly code for the C program:
+    
+				d - dissassemble 
+       			riscv64-unknown-elf-objdump -d sum1ton.o | less
+
+  		Leramed how to find the number of instrcutions from this assembly code.
+    			
+![sum1ton_main_O1](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/6de636b4-b640-421a-9bfb-c23ee9908029)
+
+	
+	  
+   
+  
 **LAB3**:
 	Debug, we want to find the way how to perform a.out on the RISC-v compiler.
  	spike
@@ -1047,7 +1073,6 @@ Spike debugger output showing the contents of stack pointer got updated.
 
 
 
-	
 
 
 **Lab** : **C and assembly program to count sum from 1 to N**
@@ -1084,11 +1109,42 @@ Spike debugger output showing the contents of stack pointer got updated.
 				ret
 
 
+# Day 6
+
+## Introduction to ABI and basic verification flow
 
 
 
-#Makerchip
+# Day 7 
 
+## Digital Logic with TL- Verilog and Makerchip
+	Makerchip is an online platform which provides instant access to the open source tools from the browser which is developed by Redwood EDA.
+ 	It allows us to code, compile, simulate, and debug Verilog designs, all from the browser. We can simulate the design and obesrve the bock diagrams as 		well as waveforms, and novel visualization capabilities of our design.
+
+  	Makerchip uses Transaction level verilog is advanced version to the verilog and provides a simple syntax and also allows for pipelines and transactions.
+
+### Combinational Logic uisng Makerchip
+
+	Understood the basic combinational circuits and logic gates along with thier implementtaion in TL verilog.
+
+ 	1. Vector: 
+  		Addition of two input vectors and store it in an output vector.
+
+![Vectors](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/13e0a2ae-1536-48fa-b93a-62c8fcec2ebe)
+
+	2. Mux: 
+ 		Verified the functioanlity with waveform as well as circuit for different Logic gates and Mux.
+
+![mux ](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/de3a129c-ef5a-47ea-8bea-e5b8cb4351d3)
+
+
+	3. Combinational caluclator
+
+ ![image](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/8033e385-5225-424d-a55b-a2a3bcdf06ff)
+
+
+  		
+  	
 		Comb CAlc:
 
   				\m4_TLV_version 1d: tl-x.org
@@ -1127,6 +1183,20 @@ Spike debugger output showing the contents of stack pointer got updated.
 
 
 
+### Sequential Logic uisng Makerchip
+
+		1. Counter:
+  			In TL verilog to add a previous value to the next (>>1 means ahead by 1 and will be conisdred for the next cycle)
+
+![counter](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/dbb42f3e-18fe-45f2-9219-49728d7c32ad)
+
+		2. Sequential Calculator:
+
+		Output value is fed back to the value 1 by giving the feedback loop from out to val1 input.
+   		Based on the value of op signal (2 bits), either sum, diff, prod or quot is calculated.
+     
+![seq calculator feedback new](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/6114d371-108f-46f1-8935-d16901f5362e)
+
     		Seq Calc:
 
       				\m5_TLV_version 1d: tl-x.org
@@ -1160,6 +1230,7 @@ Spike debugger output showing the contents of stack pointer got updated.
 				                                       $quot);
 				\SV
 				   endmodule
+
 
 
 
