@@ -1414,3 +1414,21 @@ Makerchip uses Transaction level verilog is advanced version to the verilog and 
 					!  *passed = *cyc_cnt > 16'd30;
 					\SV
 					   endmodule
+
+
+
+# Day 8
+
+## RISC-V Microarchitecture
+
+   Block diagram 
+
+   There are various blocks inside RISCV
+   Each logic is implemented differently.
+    
+  Program Counter (PC):
+     PC holds the address of the next instruction
+     Here, if earlier instruction is reset then for the next instruction PC address should start at zero 
+     and for other case it is incremented by 32'd4.
+
+
