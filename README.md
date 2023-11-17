@@ -1431,4 +1431,9 @@ Makerchip uses Transaction level verilog is advanced version to the verilog and 
      Here, if earlier instruction is reset then for the next instruction PC address should start at zero 
      and for other case it is incremented by 32'd4.
 
+  
+  Instruction memory:
+     The address from the pc is given to the instruction memory to fetch that instruction.
 
+  
+  Register types:
