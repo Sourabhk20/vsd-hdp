@@ -1390,15 +1390,13 @@ Makerchip uses Transaction level verilog is advanced version to the verilog and 
 
 ## RISC-V Microarchitecture
 
-   Block diagram 
+   Block diagram of RISCV microarchitecture: 
+   
 <img width="739" alt="rfread op" src="https://github.com/Sourabhk20/vsd-hdp/assets/148907305/e49fa77e-abcc-40bf-9ba9-9bd8183cf0d8">
 
-   There are various blocks inside RISCV
-   Each logic is implemented differently.
+   
 
-<img width="719" alt="ISA" src="https://github.com/Sourabhk20/vsd-hdp/assets/148907305/23bb2974-284c-4e4e-b254-666c9575efed">
 
-    
   Program Counter (PC):
      PC holds the address of the next instruction
      Here, if earlier instruction is reset then for the next instruction PC address should start at zero 
@@ -1426,4 +1424,8 @@ Makerchip uses Transaction level verilog is advanced version to the verilog and 
 
 
 ![Instr decode ](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/0845527c-11e0-4c36-a771-f93aacbcc229)
+
+
+
+   RISCV ISA
 
