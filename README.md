@@ -1323,7 +1323,8 @@ Makerchip uses Transaction level verilog is advanced version to the verilog and 
 
    
 
-
+ To implement RV32I Base Instruction set.
+ 
 
 
 
@@ -1356,7 +1357,8 @@ Makerchip uses Transaction level verilog is advanced version to the verilog and 
 
 **Control Logic**
 
-     Reg file read and write operation
+     Reg file read and write operation:
+     	 Intruction 
 
 
 ![block diagram](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/f71e5077-4a37-425e-a7d4-860f84ee1ec9)
