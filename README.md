@@ -1148,41 +1148,7 @@ Makerchip uses Transaction level verilog is advanced version to the verilog and 
 
   		
   	
-		Comb CAlc:
-
-  				\m4_TLV_version 1d: tl-x.org
-				\SV
-				   m4_makerchip_module
-				\TLV
-				   
-				   // Sample logical operators.
-				   // |: OR
-				   // &: AND
-				   // ^: XOR
-				   //$out = $in1 & $in2;
-				   
-				   //$out[4:0] = $in1[3:0] + $in2[3:0];
-				   
-				   // ip values are 32 bit, we are converting them to 4 bit vectors
-				   // rand1 and rand2 are not assigned, makerchip env will make up value for that input
-				   // makerchip come up with tht values, limit rnage from 0 to 15(f)
-				   $val1[31:0] = $rand1[3:0];
-				   $val2[31:0] = $rand2[3:0];
-				   
-				   //Save power by selcting perofrming operations we need to perform
-				   $sum[31:0] = $val1[31:0] + $val2[31:0];
-				   $diff[31:0] = $val1[31:0] - $val2[31:0];
-				   $prod[31:0] = $val1[31:0] * $val2[31:0];
-				   $quot[31:0] = $val1[31:0] / $val2[31:0];
-				   
-				   $out[31:0] = ($op[1:0] == 2'b00) ? $sum : 
-				                                 ($op[1:0] == 2'b01) ? $diff :
-				                                    ($op[1:0] == 2'b10) ? $prod :
-				                                       $quot;
-				                                       
-				   
-				\SV
-				endmodule
+		
 
 
 
