@@ -1249,8 +1249,12 @@ Makerchip uses Transaction level verilog is advanced version to the verilog and 
 
 	
 
- 	Cycle Calculator:
+ 	3. Cycle Calculator:
 			perform operations every other cycle.
+
+
+   ![cycle_calc_valid](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/2bff9eee-5dc5-4431-a2be-ba93571a3729)
+
 
     				\m5_TLV_version 1d: tl-x.org
 				\m5
@@ -1299,90 +1303,13 @@ Makerchip uses Transaction level verilog is advanced version to the verilog and 
 				   endmodule
 
 
-
-	Pythagores valid:
-
- 				\m4_TLV_version 1d: tl-x.org
-				\SV
-				   `include "sqrt32.v";
-				   
-				   m4_makerchip_module
-				\TLV
-				   
-				   // Stimulus
-				     
-				   // if valid, we are adding new distance to the total distance
-				   
-				   |calc
-				      @1
-				         $reset = *reset;
-				      ?$valid
-				           
-				         //$reset = *reset;
-				         @1
-				            $aa_sq[31:0] = $aa[3:0] * $aa;
-				            $bb_sq[31:0] = $bb[3:0] * $bb;
-				         @2
-				            $cc_sq[31:0] = $aa_sq + $bb_sq;
-				         @3
-				            $cc[31:0] = sqrt($cc_sq);
-				            
-				      @4
-				         $tot_dist[63:0] = $valid_or_reset ? 0 : >>1$tot_dist + $cc : 
-				                                    >>1$tot_dist; //$RETAIN
-				                           
-				!  *passed = *cyc_cnt > 16'd30;
-				\SV
-				   endmodule
+	4. Valid bit:
+ 		There will be output only if the signal is valid which is executed by valid bit.
 
 
-	Cycle caluclator with valid bit:
+![pythagores waveform valid](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/68046ce7-4c27-4013-805f-840e62645b8d)
 
- 					\m4_TLV_version 1d: tl-x.org
-					\SV
-					   `include "sqrt32.v";
-					   
-					   m4_makerchip_module
-					\TLV
-					   
-					   // Stimulus
-					     
-					   // if valid, we are adding new distance to the total distance
-					   
-					   |calc
-					      @0
-					         $reset = *reset;
-					      @1
-					         $valid = $reset ? 0 : (>>1$valid +1);
-					         $valid_or_reset = $valid || $reset;
-					      ?$valid
-					           
-					         //$reset = *reset;
-					         @1
-					            //$reset = *reset;
-					
-					            $val1[31:0] = >>2$out[31:0];
-					            $val2[31:0] = $rand2[3:0];
-					            $op[1:0] = $rand3[3:0];
-					
-					            //Save power by selcting perofrming operations we need to perform
-					            $sum[31:0] = $val1[31:0] + $val2[31:0];
-					            $diff[31:0] = $val1[31:0] - $val2[31:0];
-					            $prod[31:0] = $val1[31:0] * $val2[31:0];
-					            $quot[31:0] = $val1[31:0] / $val2[31:0];
-					
-					            //$valid = $reset ? 0 : (>>1$valid + 1);
-					
-					
-					         @2
-					            $out[31:0] = $valid_or_reset ? (($op[1:0] == 2'b00) ? $sum : 
-					                                          ($op[1:0] == 2'b01) ? $diff :
-					                                             ($op[1:0] == 2'b10) ? $prod :
-					                                                $quot) : >>1$out[31:0];
-					                           
-					!  *passed = *cyc_cnt > 16'd30;
-					\SV
-					   endmodule
+   
 
 
 
@@ -1397,22 +1324,13 @@ Makerchip uses Transaction level verilog is advanced version to the verilog and 
    
 
 
-  Program Counter (PC):
-     PC holds the address of the next instruction
-     Here, if earlier instruction is reset then for the next instruction PC address should start at zero 
-     and for other case it is incremented by 32'd4.
-
-  
-  Instruction memory:
-     The address from the pc is given to the instruction memory to fetch that instruction.
-
-  
-  Register types:
 
 
 
   **1. Fetch**
-  	The program counter holds the address of the next instruction execution and PC loads the address conent into the instruction memory.
+     PC holds the address of the next instruction
+     Here, if earlier instruction is reset then for the next instruction PC address should start at zero and for other case it is incremented by 32'd4.
+     The program counter holds the address of the next instruction execution and PC loads the address conent into the instruction memory.
 
    ![fetch waveform](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/1c2b794b-b5fa-4471-bc34-73ec62bfdcb8)
 
@@ -1427,5 +1345,35 @@ Makerchip uses Transaction level verilog is advanced version to the verilog and 
 
 
 
-   RISCV ISA
+    
+   Makerchip output block diagram after implementing fetch and decode operations.
+
+
+![block diagram](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/b204d673-d254-4057-952c-3679056cf25c)
+
+
+
+
+**Control Logic**
+
+     Reg file read and write operation
+
+
+![block diagram](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/f71e5077-4a37-425e-a7d4-860f84ee1ec9)
+
+
+
+
+**3 Stage Pipeline**
+
+	Block diagram:
+
+
+
+ 	Makerchip output block diagram after implementing 3 stage pipelining
+
+  ![image](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/76399307-885c-4164-ac34-08a32bf46943)
+
+
+
 
