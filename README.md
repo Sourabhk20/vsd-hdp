@@ -1440,3 +1440,18 @@ Makerchip uses Transaction level verilog is advanced version to the verilog and 
 
   
   Register types:
+
+
+
+  **1. Fetch**
+  	The program counter holds the address of the next instruction execution and PC loads the address conent into the instruction memory.
+
+   ![fetch waveform](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/1c2b794b-b5fa-4471-bc34-73ec62bfdcb8)
+
+
+   **2. Decode**
+   	Based on the opcode provided by the instruction, the instruction is divided into various register types such as R-type, I-type, S-type, B-type, U-type and J-type.
+
+
+![Instr decode ](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/0845527c-11e0-4c36-a771-f93aacbcc229)
+
