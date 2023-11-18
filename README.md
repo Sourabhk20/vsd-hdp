@@ -1368,6 +1368,7 @@ Makerchip uses Transaction level verilog is advanced version to the verilog and 
 
 	Block diagram:
 
+<img width="863" alt="pipeline3" src="https://github.com/Sourabhk20/vsd-hdp/assets/148907305/309192a6-915d-43b5-9510-2011c23067ea">
 
 
  	Makerchip output block diagram after implementing 3 stage pipelining
