@@ -12,6 +12,7 @@ Author: Sourabh Kulkarni
 8. [Day 7](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-7) - **Digital Logic with TL-Verilog and Makerchip**
 9. [Day 8](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-8) - **RISC-V implmentation** 
 10. [Day 9](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-9) - **Solutions to pipeline hazards and load-store implementtaion**
+11. [Day 10](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-10) - **Sandpiper tool introduction**
 
 
 
@@ -1413,7 +1414,19 @@ Data memory has 1 read write op (dmem_rd_data) and store data from rs2 to memory
 
   		
 
+# Day 10
 
+## Sandpiper tool introcution
+	Sandpiper Saas is the tool developed by redwood EDA and it is used to convert TL_verilog into synthesizable verilog.
+ 	Installed the Sandpiper to the linux machine.
+
+ 	FuseSoC is a package manager and a build system for HDL code. The following sections explain the main concepts of FuseSoC, and how they work together to obtain, configure, and build hardware designs.
+	I read the fusesoc manual, installed it and understood it’s commands.
+	fusesoc run command will be used to perform this
+ 	The fusesoc run group of commands is used to setup, build, and (if possible) run a design. The exact actions taken by the individual steps depend on the toolflow.
+
+
+   	
 
 
 
