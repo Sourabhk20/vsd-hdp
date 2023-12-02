@@ -8,7 +8,7 @@ Author: Sourabh Kulkarni
 4. [Day 3](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-3) - **Combinational and Sequential Logic optimization**
 5. [Day 4](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-4) - **Gate Level Simulation using iverilog**
 6. [Day 5](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-5) - **Introduction to RISC-V ISA and GNU Compiler Toolchain**
-7. [Day 6](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-6)
+7. [Day 6](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-6) - **Introduction to ABI and basic verification flow**
 8. [Day 7](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-7) - **Digital Logic with TL-Verilog and Makerchip**
 9. [Day 8](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-8) - **RISC-V implmentation** 
 10. [Day 9](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-9) - **Solutions to pipeline hazards and load-store implementtaion**
