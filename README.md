@@ -2,16 +2,16 @@
 
 Author: Sourabh Kulkarni 
 
-1. [Day 0](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-0) - Installation of open source tools iverilog, gtkwave and yosys   
-2. [Day 1](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-1) - Simulation of combinational designs using open source tools
-3. [Day 2](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-2) - Hierarchical and flat synthesis and Simulation of sequential circuits
+1. [Day 0](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-0) - **Installation of open source tools iverilog, gtkwave and yosys**   
+2. [Day 1](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-1) - **Simulation of combinational designs using open source tools**
+3. [Day 2](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-2) - **Hierarchical and flat synthesis and Simulation of sequential circuits**
 4. [Day 3](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-3) -
 5. [Day 4](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-4)
 6. [Day 5](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-5)
 7. [Day 6](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-6)
-8. [Day 7](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-7)
-9. [Day 8](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-8) - RISC-V implmentation 
-10. [Day 9](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-9) - Solutions to pipeline hazards and load-store implementtaion
+8. [Day 7](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-7) - **Digital Logic with TL-Verilog and Makerchip**
+9. [Day 8](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-8) - **RISC-V implmentation** 
+10. [Day 9](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-9) - **Solutions to pipeline hazards and load-store implementtaion**
 
 
 
