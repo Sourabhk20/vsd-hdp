@@ -2,15 +2,17 @@
 
 Author: Sourabh Kulkarni 
 
-i. [Day 0](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-0) - Installation of open source tools iverilog, gtkwave and yosys   
-ii. [Day 1](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-1) - Simulation of combinational designs using open source tools
-iii. [Day 2](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-2) - Hierarchical and flat synthesis and Simulation of sequential circuits
-iv. [Day 3](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-3) - 
-v. [Day 4](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-4)  
-vi. [Day 5](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-5)  
-vii. [Day 6](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-6)   
-viii. [Day 7](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-7)  
-ix. [Day 8](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-8) 
+1. [Day 0](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-0) - Installation of open source tools iverilog, gtkwave and yosys   
+2. [Day 1](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-1) - Simulation of combinational designs using open source tools
+3. [Day 2](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-2) - Hierarchical and flat synthesis and Simulation of sequential circuits
+4. [Day 3](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-3) -
+5. [Day 4](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-4)
+6. [Day 5](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-5)
+7. [Day 6](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-6)
+8. [Day 7](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-7)
+9. [Day 8](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-8) - RISC-V implmentation 
+10. [Day 9](https://github.com/Sourabhk20/vsd-hdp/blob/main/README.md#day-9) - Solutions to pipeline hazards and load-store implementtaion
+
 
 
 
@@ -1376,6 +1378,41 @@ Makerchip uses Transaction level verilog is advanced version to the verilog and 
  	Makerchip output block diagram after implementing 3 stage pipelining
 
   ![image](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/76399307-885c-4164-ac34-08a32bf46943)
+
+
+
+# Day 9
+
+## Solutions to the pipeline hazards:
+	Implementers register file bypass for Read After Write (RAW) hazard where the write data will be provided to the next instruction if that instruction is dependent on the previous hazard.
+
+Register file bypass:
+![image](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/0655fc77-2567-4ef1-9af4-61cb287e2538)
+
+	Updtaed the logic of Program Counter (PC) for branch instructions during pipeline hazards.
+	Implemented all the instructions related to ALU operations which will be performed at execute stage.
+
+
+ ## Load Store Implementation
+
+ Implemneted the load and store instructions which will be executed at 4th and 5th stage respectively.
+
+ 	LOAD rd, imm(rs1)
+  		Loads data from the memory address (address given by imm + rs1) into the register rd.
+    	STORE rs2, imm(rs1)
+  		Stores the content of rs2 into the memory address (rs2 + imm)
+
+Implemented Data memory logic which uses dmem macro and executed at 4th stage of the pipeline.
+Data memory has 1 read write op (dmem_rd_data) and store data from rs2 to memory. This memory has 16 entries, 32 bits wide and it needs 4-bit address to access the data memory. This address is provided by the result bits [5:2] and we can perform write operation.
+
+
+**Complete RISC-V core implementation**
+
+![image](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/1deea9dc-4304-4d92-ae56-24135c47cdbe)
+
+
+  		
+
 
 
 
