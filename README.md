@@ -1409,7 +1409,8 @@ Data memory has 1 read write op (dmem_rd_data) and store data from rs2 to memory
 
 **Complete RISC-V core implementation**
 
-![image](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/1deea9dc-4304-4d92-ae56-24135c47cdbe)
+![RISCV complete implementation](https://github.com/Sourabhk20/vsd-hdp/assets/148907305/a07239a9-4b81-46a8-a342-e5f0f0f9c34a)
+
 
 
   		
